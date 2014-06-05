@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>6</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>234</x>
+      <y>312</y>
+      <w>216</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>App.xaml.cs
+--
+  serverWindow: MainWindow
+  ipAddress: string
+  multicastAddres: string
+  multicastPort: int
+  networkPort: int
+  requestHandlerThread: Thread
+--
++ HandleNetworkSetupMenu(object, RoutedEventArgs)
++ HandleMulticastMenu(object, RoutedEventArgs)
++ HandleStartServerMenu(object, RoutedEventArgs)
++ HandleStopServerMenu(object, RoutedEventArgs)
++ Record(string)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>324</x>
+      <y>174</y>
+      <w>144</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>Board.cs
+--
++ cellsArray: Cell[,]
+--
++ resetBoard()
++ IsValidMovePlayer1(string): bool
++ IsValidMovePlayer2(string): bool
++ Move(string, string Piece)
++ isP1Win()
++ isP2Win()
++ getPieces(): string
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>354</x>
+      <y>42</y>
+      <w>90</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Cell.cs
+--
++ row: int
++ col: int
++ ID: int
++ piece: Piece</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>180</x>
+      <y>180</y>
+      <w>78</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+Piece
+--
++ EMPTY
++ PLAYER1
++ PLAYER2
++ UNAVAILABLE
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>594</x>
+      <y>36</y>
+      <w>90</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+GameState
+--
++ WAIT_Player1
++ WAIT_Player2
++ PLAYING
++ GAME_OVER
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>522</x>
+      <y>342</y>
+      <w>222</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>MainWindow.xaml.cs
+--
+# msgServer: UDPMessageServer
+# networkIP: string
+# networkPort: int
+--
++ AddNetworkSetupMenuHandler(RoutedEventHandler)
++ AddMulticastSetupMenuHandler(RoutedEventHandler)
++ AddStartServerMenuHandler(RoutedEventHandler)
++ AddStopServerMenuHandler(RoutedEventHandler)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>186</x>
+      <y>492</y>
+      <w>312</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>NetworkSetupWindow.xaml.cs
+--
+# address: string
+# portNumber: int
+--
+- portSlider_ValueChanged(object, RoutedPropertyChangedEventArgs&lt;double&gt;)
+- okBtn_Click(object, RoutedEventArgs)
+- ipTxt_TextChanged(object, TextChangedEventArgs)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>432</x>
+      <y>354</y>
+      <w>102</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>90;18;18;18</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>318</x>
+      <y>426</y>
+      <w>30</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>18;66;18;18</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>384</x>
+      <y>84</y>
+      <w>30</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>18;18;18;90</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>240</x>
+      <y>198</y>
+      <w>96</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>18;18;84;18</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>810</x>
+      <y>354</y>
+      <w>138</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Window</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>726</x>
+      <y>342</y>
+      <w>96</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+inherit from</panel_attributes>
+    <additional_attributes>84;30;18;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>480</x>
+      <y>372</y>
+      <w>428</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+inherit from</panel_attributes>
+    <additional_attributes>396;18;396;156;18;156</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>546</x>
+      <y>138</y>
+      <w>174</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>UDPMessageServer.cs
+--
+  board: Board
+  gameState: GameState
+  udpServer: UdpClient
+  networkPort: int
+  multicastPort: int
+  p1Name: string
+  p2Name: string
+  multicastAddress: string
+# messages: ObservableCollection&lt;string&gt;
+--
++ connectTonetwork(string, int)
++ connectToMulticast(string, int)
++ HandleRequests()
++ BroadcastMessages(string)
++ Record(string)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>780</x>
+      <y>174</y>
+      <w>162</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+MessageServer
+--
+  connectTonetwork(string, int)
+  connectToMulticast(string, int)
+  HandleRequests()
+  BroadcastMessages(string)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>612</x>
+      <y>282</y>
+      <w>30</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>18;18;18;60</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>702</x>
+      <y>180</y>
+      <w>90</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+implements</panel_attributes>
+    <additional_attributes>78;30;18;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>450</x>
+      <y>198</y>
+      <w>108</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>18;18;96;18</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>618</x>
+      <y>84</y>
+      <w>30</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>18;18;18;54</additional_attributes>
+  </element>
+</diagram>

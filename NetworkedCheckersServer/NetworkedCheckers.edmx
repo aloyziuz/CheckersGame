@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NetworkedCheckers.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="NetworkedCheckersStoreContainer">
+    <EntitySet Name="Highscores" EntityType="NetworkedCheckers.Store.Highscores" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="NetworkedCheckers.Store.Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UserHighscore" Association="NetworkedCheckers.Store.UserHighscore">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Highscore" EntitySet="Highscores" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Highscores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateTime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MoveCount" Type="smallint" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LoginStatus" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="UserHighscore">
+    <End Role="User" Type="NetworkedCheckers.Store.Users" Multiplicity="1" />
+    <End Role="Highscore" Type="NetworkedCheckers.Store.Highscores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Highscore">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="NetworkedCheckers" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="NetworkedCheckersContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Highscores" EntityType="NetworkedCheckers.Highscore" />
+          <EntitySet Name="Users" EntityType="NetworkedCheckers.User" />
+          <AssociationSet Name="UserHighscore" Association="NetworkedCheckers.UserHighscore">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Highscore" EntitySet="Highscores" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Highscore">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DateTime" Nullable="false" />
+          <Property Type="Int16" Name="MoveCount" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="NetworkedCheckers.UserHighscore" FromRole="Highscore" ToRole="User" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UserName" Nullable="false" />
+          <Property Type="String" Name="Password" Nullable="false" />
+          <NavigationProperty Name="Highscores" Relationship="NetworkedCheckers.UserHighscore" FromRole="User" ToRole="Highscore" />
+          <Property Type="Boolean" Name="LoginStatus" Nullable="false" />
+        </EntityType>
+        <Association Name="UserHighscore">
+          <End Type="NetworkedCheckers.User" Role="User" Multiplicity="1" />
+          <End Type="NetworkedCheckers.Highscore" Role="Highscore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Highscore">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NetworkedCheckersStoreContainer" CdmEntityContainer="NetworkedCheckersContainer">
+    <EntitySetMapping Name="Highscores">
+      <EntityTypeMapping TypeName="IsTypeOf(NetworkedCheckers.Highscore)">
+        <MappingFragment StoreEntitySet="Highscores">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="MoveCount" ColumnName="MoveCount" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(NetworkedCheckers.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LoginStatus" ColumnName="LoginStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,23 @@
+﻿<Window x:Class="NetworkedCheckersServer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Networked Checkers Server" Height="350" Width="525" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStyle="ThreeDBorderWindow">
+    <DockPanel Margin="0,0,0,299">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="System">
+                <MenuItem Header="Network Setup" Name="networkSetupMenu"/>
+                <MenuItem Header="Multicast Setup" Name="multicastSetupMenu"/>
+                <MenuItem Header="Start Server" Name="startServerMenu"/>
+                <MenuItem Header="Stop Server" Name="stopServerMenu" IsEnabled="False"/>
+            </MenuItem>
+        </Menu>
+        <StackPanel Orientation="Vertical">
+            <Label Content="Request/Response Log" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+            <ListView x:Name="logList" Height="295" VerticalAlignment="Top" Width="339" Margin="0,0,0,-293" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+        </StackPanel>
+        <StackPanel>
+            <Label Content="LeaderBoards" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+            <ListView x:Name="leaderboardList" Height="295" VerticalAlignment="Top" Width="178" Margin="0,0,0,-293" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+        </StackPanel>
+    </DockPanel>
+</Window>

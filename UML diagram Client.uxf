@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>5</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>330</x>
+      <y>190</y>
+      <w>175</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>App.xaml.cs
+--
+- playerWindow: MainWindow
+- playerName: string
+- handler: UDPMessageHandler
+- originRow:string
+- originCol: string
+- destRow: string
+- destCol: string
+- multicastThread: Thread
+- multicastPort: int
+- multicastAddress: string
+--
+- HandleMouseEvent(object, MouseButtonEventArgs)
++ HandleSetNetworkMenu(object, RoutedEventArgs)
++ HandleMulticastMenu(object, RoutedEventArgs)
++ HandleLogoutMenu(object,RoutedEventArgs)
++ HandleLoginMenu(object, RoutedEventArgs)
++ ListenBroadcasts()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>290</x>
+      <y>390</y>
+      <w>255</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>NetworkInformationWindow.xaml.cs
+--
+ip: string
+--
++ getIp(): string
+- portSlider_ValueChanged(object, RoutedPropertyChangedEventArgs&lt;double&gt;)
+- ipTxt_TextChanged(object, TextChangedEventArgs)
+- okBtn_Click(object, RoutedEventArgs)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>350</x>
+      <y>125</y>
+      <w>130</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>LoginWindow.xaml.cs
+--
+name: string
+--
+- okBtn_Click(object, RoutedEventArgs)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>535</x>
+      <y>270</y>
+      <w>180</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>MainWindow.xaml.cs
+--
+ 
+--
++ AddSetNetworkMenuHandler(RoutedEventHandler)
++ AddLoginMenuHandler(RoutedEventHandler)
++ AddLogoutMenuHandler(RoutedEventHandler)
++ AddSetMulticastMenuHandler(RoutedEventHandler)
++ AddListViewItemHandler(MouseButtonEventHandler)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>485</x>
+      <y>275</y>
+      <w>59</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>50;15;15;15</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>395</x>
+      <y>145</y>
+      <w>24</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>15;15;15;45</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>775</x>
+      <y>280</y>
+      <w>115</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Window</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>700</x>
+      <y>270</y>
+      <w>84</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+inherit from</panel_attributes>
+    <additional_attributes>75;25;15;25</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>465</x>
+      <y>115</y>
+      <w>389</w>
+      <h>174</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+inherit from</panel_attributes>
+    <additional_attributes>360;165;360;25;15;25</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>530</x>
+      <y>295</y>
+      <w>324</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+inherit from</panel_attributes>
+    <additional_attributes>295;15;295;125;15;125</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>535</x>
+      <y>170</y>
+      <w>165</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>CheckerBoard.xaml.cs
+--
+row: int
+col: int
+--
++ showPiece(int, bool)
++ setPieceColour(int, bool)
++ AddMouseHandler(MouseButtonEventHandler)
++ HitTest(Point)
++ getRow(): int
++ getCol(): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>605</x>
+      <y>240</y>
+      <w>24</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>15;15;15;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>755</x>
+      <y>200</y>
+      <w>65</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>UserControl</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>685</x>
+      <y>185</y>
+      <w>79</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+inherit from</panel_attributes>
+    <additional_attributes>70;25;15;25</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>185</x>
+      <y>150</y>
+      <w>80</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+MessageHandler
+--
+ 
+--
++ connectTo(string, int)
++ sendRequest(string)
++ getRequest(): string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>175</x>
+      <y>255</y>
+      <w>85</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>UDPMessageHandler.cs
+--
+udpClient: UDPClient
+--
++ connectTo(string, int)
++ sendRequest(string)
++ getResponse(): string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>245</x>
+      <y>280</y>
+      <w>94</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>15;15;85;15</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>185</x>
+      <y>195</y>
+      <w>64</w>
+      <h>69</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+implements</panel_attributes>
+    <additional_attributes>35;15;35;60</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>400</x>
+      <y>325</y>
+      <w>24</w>
+      <h>74</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>15;65;15;15</additional_attributes>
+  </element>
+</diagram>

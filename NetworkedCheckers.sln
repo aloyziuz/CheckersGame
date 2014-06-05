@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkedCheckersClient", "NetworkedCheckersClient\NetworkedCheckersClient.csproj", "{4389925F-A311-4024-9E2D-10D3FAA4137B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBoard", "TestBoard\TestBoard.csproj", "{97186E69-9BAB-4ABC-99AB-C1204DDF05AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkedCheckersServer", "NetworkedCheckersServer\NetworkedCheckersServer.csproj", "{FD8ECB61-9A1C-494A-9D6A-21E23EA1ABD5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4389925F-A311-4024-9E2D-10D3FAA4137B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4389925F-A311-4024-9E2D-10D3FAA4137B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4389925F-A311-4024-9E2D-10D3FAA4137B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4389925F-A311-4024-9E2D-10D3FAA4137B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97186E69-9BAB-4ABC-99AB-C1204DDF05AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97186E69-9BAB-4ABC-99AB-C1204DDF05AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97186E69-9BAB-4ABC-99AB-C1204DDF05AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97186E69-9BAB-4ABC-99AB-C1204DDF05AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD8ECB61-9A1C-494A-9D6A-21E23EA1ABD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD8ECB61-9A1C-494A-9D6A-21E23EA1ABD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD8ECB61-9A1C-494A-9D6A-21E23EA1ABD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD8ECB61-9A1C-494A-9D6A-21E23EA1ABD5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
